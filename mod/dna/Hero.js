@@ -1,4 +1,6 @@
 'use strict'
+//@depends(dna/Sprite)
+
 
 let Hero = function(st) {
     dna.Sprite.call(this, st);

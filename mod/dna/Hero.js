@@ -4,7 +4,7 @@
 
 let Hero = function(st) {
     dna.Sprite.call(this, st);
-
+    this.collidable = true;
     this.keys = []
     this.speed = 4;
 

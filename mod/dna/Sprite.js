@@ -16,7 +16,6 @@ let Sprite = function(st) {
     this.h = 1
     this.aw = 1
     this.ah = 1
-
     this.tilex = false
     this.startTilex = 0 // tilex is an index from tilemap
     this.endTilex = 0

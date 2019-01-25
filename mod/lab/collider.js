@@ -19,7 +19,7 @@ module.exports = {
                 // got a hit
                 collision = true
             }
-        })
+        });
         return collision
     },
 

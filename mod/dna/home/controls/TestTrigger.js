@@ -9,6 +9,8 @@ let TestTrigger = function(st) {
     sys.augment(this, st)
 };
 
+
+
 sys.extend(TestTrigger, dna.home.Trigger);
 
 module.exports = TestTrigger;

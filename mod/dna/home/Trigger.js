@@ -15,6 +15,10 @@ let Trigger = function(st) {
     this.tiles = res.tileset;
 
     sys.augment(this, st)
+};
+
+Trigger.prototype.hit = function(elem){
+    console.log("Hit:", elem);
 }
 
 sys.extend(Trigger, dna.Sprite);

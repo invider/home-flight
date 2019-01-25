@@ -10,6 +10,7 @@ let Floor = function(st) {
     dna.Sprite.call(this, st);
     //this.speed = 0.5;
     this.tiles = res.home.floor;
+    this.collidable = true;
     sys.augment(this, st);
 };
 

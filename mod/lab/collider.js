@@ -55,4 +55,4 @@ module.exports = {
             s => (!!s.collidable)
         )
     }
-}
+};

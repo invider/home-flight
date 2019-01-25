@@ -1,7 +1,8 @@
 var TYPEMAP = {
     '*': 'home/floor',
     'r': 'roof',
-    '@': 'mob/Master'
+    '@': 'mob/Master',
+    'T': 'home/controls/TestTrigger'
 };
 
 

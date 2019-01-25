@@ -12,6 +12,7 @@ let Trigger = function(st) {
 //    this.speed = 0.5;
     this.startTilex = 7 * 6;
     this.endTilex = 7 * 6;
+    this.triggerTileX = 10;
     this.tiles = res.tileset;
     this.collidable = true;
 
@@ -22,6 +23,7 @@ sys.extend(Trigger, dna.Sprite);
 
 
 Trigger.prototype.hit = function(elem){
+    lab.triggerControl.trigger = this;
     lab.triggerControl.visible = true;
 }
 

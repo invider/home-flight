@@ -1,0 +1,11 @@
+{
+      "name": "home-flight",
+      "version": "0.0.1",
+      "description": "collider.jam project",
+      "keywords": "collider,jam,mod",
+      "dependencies": {
+            "jam.fs": "git+https://github.com/invider/jam.fs.git"
+      },
+      "author": "",
+      "license": "MIT"
+}

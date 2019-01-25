@@ -1,5 +1,5 @@
 
-let ZOOM = 120
+let ZOOM = 50
 
 module.exports = function() {
 
@@ -8,8 +8,8 @@ module.exports = function() {
     sys.spawn('SlideCamera', {
         name: 'camera', 
         Z: 10,
-        x: 0,
-        y: 0,
+        x: 12,
+        y: 10,
         scale: ZOOM,
         speed: ZOOM*8,
         keys: []
@@ -23,20 +23,19 @@ module.exports = function() {
     }
 
     sys.spawn('Hero', {
-        name: 'hero-1',
+        name: 'hero1',
         Z: 100, 
-        x: 200,
-        y: 200,
+        x: 10,
+        y: 10,
         tiles: res.sprite,
-        w: 100,
-        h: 100,
-        aw: 100,
-        ah: 100,
+        w: 1,
+        h: 1,
+        aw: 1,
+        ah: 1,
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
-    });
-
+    }, 'camera');
 
     env.debug = true
     env.status = 'debug mode'

@@ -13,7 +13,14 @@ module.exports = function() {
         scale: ZOOM,
         speed: ZOOM*8,
         keys: []
-    })
+    });
+
+    // setup level according to hash
+    if (window.location.hash) {
+        lab.game.nextLevel(parseInt(window.location.hash.substring(1)))
+    } else {
+        lab.game.nextLevel();
+    }
 
     sys.spawn('Hero', {
         Z: 100, 
@@ -25,7 +32,8 @@ module.exports = function() {
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
-    })
+    });
+
 
     env.debug = true
 }

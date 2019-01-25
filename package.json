@@ -4,7 +4,7 @@
       "description": "collider.jam project",
       "keywords": "collider,jam,mod",
       "dependencies": {
-            "jam.fs": "git+https://github.com/invider/jam.fs.git"
+          "jam.fs": "https://github.com/invider/jam.fs.git"
       },
       "author": "",
       "license": "MIT"

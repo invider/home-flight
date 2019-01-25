@@ -13,6 +13,7 @@ let Trigger = function(st) {
     this.startTilex = 7 * 6;
     this.endTilex = 7 * 6;
     this.tiles = res.tileset;
+    this.collidable = true;
 
     sys.augment(this, st)
 };
@@ -21,6 +22,7 @@ sys.extend(Trigger, dna.Sprite);
 
 
 Trigger.prototype.hit = function(elem){
+    debugger;
     console.log("Hit:", elem);
 }
 

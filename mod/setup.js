@@ -16,16 +16,20 @@ module.exports = function() {
     })
 
     sys.spawn('Hero', {
+        name: 'hero-1',
         Z: 100, 
         x: 200,
         y: 200,
         tiles: res.sprite,
         w: 100,
         h: 100,
+        aw: 100,
+        ah: 100,
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
     })
 
     env.debug = true
+    env.status = 'debug mode'
 }

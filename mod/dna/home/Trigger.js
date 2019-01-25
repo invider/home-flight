@@ -17,11 +17,12 @@ let Trigger = function(st) {
     sys.augment(this, st)
 };
 
+sys.extend(Trigger, dna.Sprite);
+
+
 Trigger.prototype.hit = function(elem){
     console.log("Hit:", elem);
 }
-
-sys.extend(Trigger, dna.Sprite);
 
 module.exports = Trigger
 

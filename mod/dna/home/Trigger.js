@@ -22,8 +22,7 @@ sys.extend(Trigger, dna.Sprite);
 
 
 Trigger.prototype.hit = function(elem){
-    debugger;
-    console.log("Hit:", elem);
+    lab.triggerControl.visible = true;
 }
 
 module.exports = Trigger

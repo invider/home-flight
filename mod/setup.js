@@ -37,6 +37,18 @@ module.exports = function() {
         framerate: 9,
     }, 'camera');
 
+    sys.spawn('TriggerControl', {
+        name: 'triggerControl', 
+        Z: 10,
+        x: 10,
+        y: 10,
+        w: 50,
+        h: 50,
+        scale: ZOOM,
+        speed: ZOOM*8,
+        keys: []
+    });
+
     env.debug = true
     env.status = 'debug mode'
 }

@@ -13,10 +13,11 @@ let Bed = function(st) {
     this.img = res.home[st.bedType];
 
     sys.augment(this, st);
-    this.spawnPlayer();
+    //this.spawnPlayer();
 };
 sys.extend(Bed, dna.Sprite);
 
+/*
 Bed.prototype.spawnPlayer = function(){
     sys.spawn("Hero", {
         name: this.hero,
@@ -25,5 +26,6 @@ Bed.prototype.spawnPlayer = function(){
         y: this.y,
     }, "camera");
 }
+*/
 
 module.exports = Bed

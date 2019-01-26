@@ -1,6 +1,9 @@
 'use strict'
 
+let spawnBed = 0
+
 let game = {
+
     level: 0,
     cycle: 0,
 
@@ -26,6 +29,7 @@ let game = {
         this.loadLevel(levelRes)
     },
 
+    /*
     gameOver: function(){
         this.loadLevel(res.levels.death);
         setTimeout(() => {
@@ -35,10 +39,33 @@ let game = {
         }, 1000);
         lib.sfx(res.sfx.ghost2, 1)
     },
+    */
 
     loadLevel: function(levelRes){
         lab.camera.detachAll();
         lib.levelLoader.loadFile(levelRes, lib.typeMap);
+    },
+
+    locateBeds: function() {
+        return lab.camera._ls.filter(e => e instanceof dna.home.Bed)
+    },
+
+    spawnHero: function(player) {
+        let beds = this.locateBeds()
+        if (spawnBed >= beds.length) spawnBed = 0
+        let bed = beds[spawnBed++]
+
+        let hero = sys.spawn('Hero', {
+            name: 'hero' + player,
+            Z: 101, 
+            x: bed.x,
+            y: bed.y,
+            bedType: "bed1",
+            controlName: "triggerControl1",
+        }, 'camera');
+        hero.jump()
+
+        return hero
     },
 
 };

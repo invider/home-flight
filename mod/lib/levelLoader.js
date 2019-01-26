@@ -44,7 +44,7 @@ let LevelLoader = {
                 h: 1
             };
             let type = typeMap[symbol];
-            console.log(symbol);
+            //console.log(symbol);
             if (type) {
                 if (typeof typeMap[symbol] !== "string") {
                     type = typeMap[symbol].proto;

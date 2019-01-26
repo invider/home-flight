@@ -1,8 +1,11 @@
 'use strict'
 //@depends(dna/Sprite)
 
+let id = 1
+
 let Hero = function(st) {
     dna.Sprite.call(this, st);
+    this.name = 'hero' + id++
     this.collidable = true;
     this.Z = 101
     

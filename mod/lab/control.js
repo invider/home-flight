@@ -1,5 +1,8 @@
 'use strict'
 
+const MAX_GAMEPADS = 8
+const GAMEPAD_BUTTON_SCAN = 16
+
 // control ghost
 module.exports = {
 
@@ -10,6 +13,8 @@ module.exports = {
                 h.jump()
             }
             h.keys[dir] = true
+        } else {
+            lab.game.spawnHero(player)
         }
     },
 
@@ -22,14 +27,26 @@ module.exports = {
 
     use: function(player, action) {
         let h = lab.camera['hero' + player]
-        if (!h) return
+        if (!h) {
+            lab.game.spawnHero(player)
+            return
+        }
 
         h.use(action)
     },
 
     handlePad: function(player, pad, dt) {
         let h = lab.camera['hero' + player]
-        if (!h) return
+        if (!h) {
+            // no associated hero!
+            // check if we need to spawn on
+            let pressedAction = false
+            for (let b = 0; b < GAMEPAD_BUTTON_SCAN; b++) {
+                if (pad.buttons[b].pressed) pressedAction = true
+            }
+            if (pressedAction) h = lab.game.spawnHero(player)
+            return
+        }
 
         for (let b = 0; b < 4; b++) {
             if (pad.buttons[b].pressed) {
@@ -62,9 +79,9 @@ module.exports = {
     },
 
     evo: function(dt) {
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < MAX_GAMEPADS; i++) {
             let pad = navigator.getGamepads()[i];
-            if (pad) this.handlePad(i+1, pad, dt)
+            if (pad) this.handlePad(i+3, pad, dt)
         }
     },
 

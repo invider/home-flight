@@ -11,7 +11,7 @@ let Floor = function(st) {
     dna.Sprite.call(this, st);
 
     this.solid = true
-    this.tiles = res.home.floor;
+    this.img = res.home.floor;
 
     sys.augment(this, st);
 };

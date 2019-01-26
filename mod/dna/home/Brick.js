@@ -5,16 +5,18 @@
  *
  * @param st
  * @constructor
- * @alias lab.Wall
+ * @alias lab.Brick
  */
-let Wall = function(st) {
+let Brick = function(st) {
     dna.Sprite.call(this, st);
+
     this.solid = true
-    this.img = res.home.wall;
+    this.tiles = res.home.bricks;
 
     sys.augment(this, st);
 };
 
-sys.extend(Wall, dna.Sprite);
+sys.extend(Brick, dna.Sprite);
 
-module.exports = Wall
+module.exports = Brick
+

@@ -1,5 +1,6 @@
 'use strict'
 //@depends(dna/Sprite)
+
 /**
  *
  * @param st

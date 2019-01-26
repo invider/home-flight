@@ -21,4 +21,8 @@ module.exports = function(e) {
             }
             break;
     }
+
+    if (!_.paused && !e.repeat) {
+        lab.cheat.key(e.key)
+    }
 };

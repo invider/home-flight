@@ -15,6 +15,16 @@ module.exports = function() {
         keys: []
     });
 
+    sys.spawn('Grid', {
+        Z: 10000,
+        color: '#ffffff',
+        top: 10,
+        step: 1,
+        coordinates: false,
+        style: 'target',
+    }, 'camera');
+
+
     // setup level according to hash
     if (window.location.hash) {
         lab.game.nextLevel(parseInt(window.location.hash.substring(1)))
@@ -27,6 +37,21 @@ module.exports = function() {
         Z: 100, 
         x: 10,
         y: 10,
+        tiles: res.sprite,
+        w: 1,
+        h: 1,
+        aw: 1,
+        ah: 1,
+        startTilex: 0,
+        endTilex: 5,
+        framerate: 9,
+    }, 'camera');
+
+    sys.spawn('Hero', {
+        name: 'hero2',
+        Z: 100, 
+        x: 12,
+        y: 12,
         tiles: res.sprite,
         w: 1,
         h: 1,

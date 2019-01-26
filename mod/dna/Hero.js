@@ -10,8 +10,8 @@ let Hero = function(st) {
 
     this.x = 0
     this.y = 0
-    this.w = 1
-    this.h = 1
+    this.w = 1.2
+    this.h = 1.2
     this.aw = 0.8
     this.ah = 0.9
     this.tiles = res.sprite

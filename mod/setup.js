@@ -88,5 +88,5 @@ module.exports = function() {
     env.sfxVolume = 0.7
     sys.augment(env, env.tuning)
 
-    env.debug = true
+    env.debug = false
 }

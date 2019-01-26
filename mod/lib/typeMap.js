@@ -10,7 +10,7 @@ var TYPEMAP = {
         w: 1,
         h: 1,
         aw: 1,
-        ah: 1,
+        ah: 1
     }},
     '#': {proto:"Hero", params: {
         name: "hero2",

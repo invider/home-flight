@@ -62,4 +62,6 @@ module.exports = function() {
     sys.augment(env, env.tuning)
 
     env.debug = false
+    
+    console.dir(navigator.getGamepads())
 }

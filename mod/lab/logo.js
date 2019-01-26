@@ -1,7 +1,7 @@
 'use strict'
 
 const title = '=  dream rocket boy  ='
-const subtitle = 'incredible adventure of bedroom astronauts in outer space'
+const subtitle = 'adventure of bedroom astronauts in outer space'
 
 module.exports = {
 

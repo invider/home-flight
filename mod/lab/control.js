@@ -42,7 +42,7 @@ module.exports = {
             // check if we need to spawn on
             let pressedAction = false
             for (let b = 0; b < GAMEPAD_BUTTON_SCAN; b++) {
-                if (pad.buttons[b].pressed) pressedAction = true
+                if (pad.buttons[b] && pad.buttons[b].pressed) pressedAction = true
             }
             if (pressedAction) h = lab.game.spawnHero(player)
             return

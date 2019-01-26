@@ -1,6 +1,5 @@
 var TYPEMAP = {
     '*': 'home/Floor',
-    'w': 'home/controls/Window',
     '|': 'home/Wall',
     'r': 'roof',
     '@': {proto:"Hero", params: {
@@ -11,6 +10,8 @@ var TYPEMAP = {
         name: "hero2",
         controlName: "triggerControl2",
     }},
+    'w': 'home/controls/WindowTrigger',
+    'm': 'home/controls/MicrowaveTrigger',
     'T': 'home/controls/TestTrigger'
 };
 

@@ -9,7 +9,6 @@
 
 let Trigger = function(st) {
     dna.Sprite.call(this, st);
-//    this.speed = 0.5;
     this.startTilex = 7 * 6;
     this.endTilex = 7 * 6;
     this.triggerTileX = 10;

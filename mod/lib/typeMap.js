@@ -3,6 +3,7 @@ var TYPEMAP = {
     '*': 'home/Floor',
     '|': 'home/WallPaper',
     'u': 'home/WallPaperBottom',
+    'U': 'home/BathWallpaper',
     'i': 'home/InvisibleWal',
     'r': 'roof',
     '@': {proto:"home/Bed", params: {

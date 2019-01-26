@@ -1,11 +1,13 @@
 
-let STAR_FQ = 0.8
-let METEOR_FQ = 0.3
+let STAR_FQ = 2
+let METEOR_FQ = 0.5
 
 // star background
 module.exports =  {
 
     Z: 0,
+
+    speed: -5,
 
     stars: [],
 
@@ -14,9 +16,11 @@ module.exports =  {
             a: true,
             falling: falling,
             c: this._.lib.math.rndi(3),
-            x: this._.env.width,
-            y: this._.lib.math.rndi(this._.env.height),
-            s: 4 + this._.lib.math.rndi(8),
+            x: this._.lib.math.rndi(this._.env.width),
+            y: (this.speed < 0)? -20 : this._.env.height + 20,
+            //x: this._.env.width,
+            //y: this._.lib.math.rndi(this._.env.height),
+            s: 4 + this._.lib.math.rndi(8), // relative speed
             m: 5 + this._.lib.math.rndi(10),
         }
         if (falling) {
@@ -53,14 +57,15 @@ module.exports =  {
         if (this._.lib.math.rndf() < METEOR_FQ * dt) this.newStar(true)
 
         // move stars
+        let speed = this.speed
         this.stars.forEach( star => {
             if (star.falling) {
                 star.x += star.dx * dt
                 star.y += star.dy * dt
                 if (star.y > env.height) star.a = false
             } else {
-                star.x -= star.s * dt
-                if (star.x < 0) star.a = false
+                star.y -= speed * star.s * dt
+                if (star.y < -env.height|| star.y > env.height*2) star.a = false
             }
         })
     },

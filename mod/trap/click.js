@@ -1,5 +1,7 @@
 module.exports = function(e) {
 
+    if (!env.debug) return
+
     let tx = lab.camera.worldX(e.x)
     let ty = lab.camera.worldY(e.y)
     let sx = lab.camera.screenX(tx)

@@ -1,14 +1,18 @@
 #STORY=story_level1
 ^^^SETTINGS^^^
-   bbbbbbbbbbbbbbbbbbbbb
-  bumu@uuuu|||#uuuuuuuuub
- b*********|||***********b
-b|||||||||||||*|||||||||||b
-ib|||||||||||||||||||||||b
- bmu||uuuuuuuuuuuuuuuuuuuwi
- b**||********************
- b|||||||||||*|||*UUUUUUU*
- b|||||||||||||||UUUUUUUU*
-iwuuuuuuu*uuuuwuu*UUUUUUU*
- *************************
+            bbb
+          bbbbbbb
+       bbbbwbwbwbbbb
+    bbbbbbbbbbbbbbbbbbb
+   bwwwwwbwwwwwwwwbwwwwb
+  bmuu@uuu|||u#uuuuuuuuub
+ b********|||************b
+bb|||||||*||||*||||||||||bb
+iw||||w||||||||||w|w|w|||wi
+ibmu||uuuuuuuu||uuuuuuuuubi
+ib**||********||**********i
+ib|||||||*|||||||*UUUUUUU*i
+iw|||w||||||||w||UUUUUUUUwi
+ibuuuuuuu*uuuuuuu*UUUUUUU*i
+i*************************i
 

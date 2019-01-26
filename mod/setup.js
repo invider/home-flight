@@ -8,13 +8,14 @@ module.exports = function() {
     sys.spawn('SlideCamera', {
         name: 'camera', 
         Z: 10,
-        x: 12,
-        y: 5,
+        x: 13,
+        y: 8,
         scale: ZOOM,
         speed: ZOOM*8,
         keys: []
     });
 
+    /*
     sys.spawn('Grid', {
         Z: 10000,
         color: '#ffffff',
@@ -23,6 +24,7 @@ module.exports = function() {
         coordinates: false,
         style: 'target',
     }, 'camera');
+    */
 
 
     // setup level according to hash

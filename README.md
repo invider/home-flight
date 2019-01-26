@@ -1,8 +1,7 @@
 Dream Rocket Boy
 ================
 
-An Incredible Advanture in Outer Space
---------------------------------------
+_Or incredible adventure of bedroom astronauts in outer space_
 
 ## How to run
 

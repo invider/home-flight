@@ -31,7 +31,6 @@ Hero.prototype.use = function(action) {
 }
 
 Hero.prototype.jump = function() {
-    log.out(this.name + ' jump')
     this.dy = -env.JUMP
 }
 

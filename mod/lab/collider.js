@@ -39,6 +39,13 @@ module.exports = {
     },
 
     evo: function(dt) {
+
+        lab.camera._ls.forEach(e => {
+            if (e instanceof dna.Hero) {
+                e.trigger = false
+            }
+        })
+
         // go over all entities under the camera
         // and test for collisions
         let i = lab.camera.collide(function(s, t) {

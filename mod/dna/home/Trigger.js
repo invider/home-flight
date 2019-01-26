@@ -26,6 +26,7 @@ Trigger.prototype.use = function(){
 }
 Trigger.prototype.hit = function(elem){
     if (elem instanceof dna.Hero){
+        elem.trigger = this
         lab[elem.controlName].trigger = this;
     }
 }

@@ -28,17 +28,11 @@ TriggerControl.prototype.draw = function(){
 
 TriggerControl.prototype.drawTrigger = function(){
     let tiles = this.trigger.tiles;
-
     ctx.save();
-        ctx.translate(this.w / 2, this.h / 2);
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        //ctx.translate(this.x + (this.w - tiles.tw) / 2, this.y + (this.h - tiles.th) / 2);
-        ctx.rotate(this.trigger.angle * Math.PI / 180);
-        this.trigger.tiles.draw(this.trigger.triggerTileX, - tiles.tw/2, - tiles.th/2, tiles.th, tiles.tw);
-        ctx.restore();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.trigger.angle * Math.PI / 180);
+    this.trigger.tiles.draw(this.trigger.triggerTileX, - tiles.tw/2, - tiles.th/2, tiles.th, tiles.tw);
     ctx.restore();
-    
 }
 
 module.exports = TriggerControl

@@ -65,8 +65,8 @@ module.exports = function() {
     sys.spawn('TriggerControl', {
         name: 'triggerControl', 
         Z: 10,
-        x: 10,
-        y: 10,
+        x: 50,
+        y: 50,
         w: 50,
         h: 50,
         scale: ZOOM,

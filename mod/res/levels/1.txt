@@ -1,11 +1,11 @@
 #STORY=story_level1
 ^^^SETTINGS^^^
    bbbbbbbbbbbbbbbbbbbbb
-  buTu@uuuu|||#uuuuuuuuub
+  bumu@uuuu|||#uuuuuuuuub
  b*********|||***********b
 b|||||||||||||*|||||||||||b
 ib|||||||||||||||||||||||b
- bmu||uuuuuuuu|||||||||||wi
+ bmu||uuuuuuuuuuuuuuuuuuuwi
  b**||********************
  b|||||||||||*|||*UUUUUUU*
  b|||||||||||||||UUUUUUUU*

@@ -27,13 +27,19 @@ TriggerControl.prototype.draw = function(){
 }
 
 TriggerControl.prototype.drawTrigger = function(){
-    let tiles = this.trigger.tiles;
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.rotate(this.trigger.angle * Math.PI / 180);
-    this.trigger.tiles.draw(this.trigger.triggerTileX, - tiles.tw/2, - tiles.th/2, tiles.th, tiles.tw);
-    
+    if (this.trigger.type == "rotate"){
+        let tiles = res.tileset;
+        let triggerTileX = 10
+        ctx.rotate(this.trigger.angle * Math.PI / 180);
+        tiles.draw(triggerTileX, - tiles.tw/2, - tiles.th/2, tiles.th, tiles.tw);
+    } else {
+        let image = this.trigger.pressed ? res.home.buttonPressed: res.home.button;
+        ctx.drawImage(image,- image.width / 2, - image.height / 2, image.width, image.height);
+    }
     ctx.restore();
+    
 }
 
 module.exports = TriggerControl;

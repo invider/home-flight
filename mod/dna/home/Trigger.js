@@ -9,10 +9,7 @@
 
 let Trigger = function(st) {
     dna.Sprite.call(this, st);
-    this.startTilex = 7 * 6;
-    this.endTilex = 7 * 6;
-    this.triggerTileX = 10;
-    this.tiles = res.tileset;
+    this.type = "rotate";
     this.collidable = true;
     this.angle = 0;
     sys.augment(this, st)

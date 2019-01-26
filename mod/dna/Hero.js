@@ -28,15 +28,14 @@ sys.extend(Hero, dna.Sprite);
 
 Hero.prototype.use = function(action) {
 
-    console.dir(this)
     switch(action) {
     case 1: this.jump(); break;
     case 2: if (this.trigger) {
-            log.out('action A on ' + trigger.name)
+            this.trigger.use(this)
         }
         break;
     case 3: if (this.trigger) {
-            log.out('action B on ' + trigger.name)
+            this.trigger.use(this)
         }
         break;
     }
@@ -44,10 +43,6 @@ Hero.prototype.use = function(action) {
 
 Hero.prototype.jump = function() {
     this.dy = -env.JUMP
-    log.out('sfx')
-    console.dir(res.sfx.jump1)
-    console.dir(lib.sfx)
-
     lib.sfx(res.sfx.jump1, 0.5)
 }
 

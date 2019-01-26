@@ -7,6 +7,8 @@ const GAMEPAD_BUTTON_SCAN = 16
 module.exports = {
 
     move: function(player, dir) {
+        if (lab.game.over) return
+
         let h = lab.camera['hero' + player]
         if (h) {
             if (dir === 2 && !h.keys[dir]) {
@@ -26,6 +28,8 @@ module.exports = {
     },
 
     use: function(player, action) {
+        if (lab.game.over) return
+
         let h = lab.camera['hero' + player]
         if (!h) {
             lab.game.spawnHero(player)
@@ -79,6 +83,8 @@ module.exports = {
     },
 
     evo: function(dt) {
+        if (lab.game.over) return
+
         for (let i = 0; i < MAX_GAMEPADS; i++) {
             let pad = navigator.getGamepads()[i];
             if (pad) this.handlePad(i+3, pad, dt)

@@ -12,14 +12,16 @@ module.exports = {
 
     supply: function(v) {
         this.value = lib.math.limitedAdd(this.value, v, env.MAX_IMAGINATION)
+        return this.value
     },
 
     reduce: function(v) {
         this.value -= v
         if (this.value < 0) {
             this.value = 0
-            trap('gameover')
+            trap('gameOver')
         }
+        return this.value
     },
 
     draw: function() {

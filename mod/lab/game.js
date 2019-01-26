@@ -4,6 +4,8 @@ let spawnBed = 0
 
 let game = {
 
+    over: false,
+
     level: 0,
     cycle: 0,
 

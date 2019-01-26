@@ -5,7 +5,7 @@
 let TestTrigger = function(st) {
     dna.home.Trigger.call(this, st);
 //    this.speed = 0.5;
-
+    this.img = res.home.microwave;
     sys.augment(this, st)
 };
 

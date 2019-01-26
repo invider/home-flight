@@ -5,12 +5,14 @@ var TYPEMAP = {
     'u': 'home/WallPaperBottom',
     'i': 'home/InvisibleWal',
     'r': 'roof',
-    '@': {proto:"Hero", params: {
-        name: "hero1",
+    '@': {proto:"home/Bed", params: {
+        hero: "hero1",
+        bedType: "bed1",
         controlName: "triggerControl1",
     }},
-    '#': {proto:"Hero", params: {
-        name: "hero2",
+    '#': {proto:"home/Bed", params: {
+        hero: "hero2",
+        bedType: "bed2",
         controlName: "triggerControl2",
     }},
     'w': 'home/controls/WindowTrigger',

@@ -11,7 +11,7 @@ let TriggerControl = function(st) {
     dna.Sprite.call(this, st);
 //    this.speed = 0.5;
     this.img = res.TriggerControlBg;
-    this.visible = false;
+    this.trigger = false;
     this.collidable = true;
 
     sys.augment(this, st)
@@ -19,11 +19,11 @@ let TriggerControl = function(st) {
 
 sys.extend(TriggerControl, dna.Sprite);
 TriggerControl.prototype.draw = function(){
-    if (this.visible){
+    if (this.trigger){
         dna.Sprite.prototype.draw.call(this);
         this.drawTrigger();
     }
-    this.visible = false;
+    this.trigger = false;
 }
 
 TriggerControl.prototype.drawTrigger = function(){
@@ -35,6 +35,6 @@ TriggerControl.prototype.drawTrigger = function(){
     ctx.restore();
 }
 
-module.exports = TriggerControl
+module.exports = TriggerControl;
 
 

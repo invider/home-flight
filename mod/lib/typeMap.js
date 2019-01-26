@@ -3,6 +3,7 @@ var TYPEMAP = {
     'r': 'roof',
     '@': {proto:"Hero", params: {
         name: "hero1",
+        controlName: "triggerControl1",
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
@@ -14,6 +15,7 @@ var TYPEMAP = {
     }},
     '#': {proto:"Hero", params: {
         name: "hero2",
+        controlName: "triggerControl2",
         startTilex: 0,
         endTilex: 5,
         framerate: 9,

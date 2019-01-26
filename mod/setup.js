@@ -63,9 +63,21 @@ module.exports = function() {
     // }, 'camera');
 
     sys.spawn('TriggerControl', {
-        name: 'triggerControl', 
+        name: 'triggerControl1', 
         Z: 10,
         x: 50,
+        y: 50,
+        w: 50,
+        h: 50,
+        scale: ZOOM,
+        speed: ZOOM*8,
+        keys: []
+    });
+
+    sys.spawn('TriggerControl', {
+        name: 'triggerControl2', 
+        Z: 10,
+        x: 150,
         y: 50,
         w: 50,
         h: 50,

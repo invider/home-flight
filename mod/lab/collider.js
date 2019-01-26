@@ -8,7 +8,7 @@ module.exports = {
         
         lab.camera._ls.forEach(t => {
             if (t !== obj
-                    //&& t.solid
+                    && t.solid
                     //&& !t.either
                     //&& (t instanceof dna.Wall)
                     // test on collision
@@ -20,6 +20,12 @@ module.exports = {
                 collision = true
             }
         });
+
+        if (collision) {
+            env.status = 'collision'
+        } else {
+            env.status = 'free'
+        }
         return collision
     },
 
@@ -51,8 +57,9 @@ module.exports = {
                 }
             },
 
-            // filter out not collidable entities
+            // fix flags on non-collidable entities
             s => (!!s.collidable)
         )
     }
+
 };

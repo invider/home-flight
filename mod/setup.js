@@ -1,5 +1,5 @@
 
-let ZOOM = 50
+let ZOOM = 30
 
 module.exports = function() {
 
@@ -9,7 +9,7 @@ module.exports = function() {
         name: 'camera', 
         Z: 10,
         x: 12,
-        y: 10,
+        y: 5,
         scale: ZOOM,
         speed: ZOOM*8,
         keys: []
@@ -35,13 +35,9 @@ module.exports = function() {
     sys.spawn('Hero', {
         name: 'hero1',
         Z: 100, 
-        x: 10,
-        y: 10,
+        x: 14,
+        y: 2,
         tiles: res.sprite,
-        w: 1,
-        h: 1,
-        aw: 1,
-        ah: 1,
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
@@ -50,13 +46,9 @@ module.exports = function() {
     sys.spawn('Hero', {
         name: 'hero2',
         Z: 100, 
-        x: 12,
-        y: 12,
+        x: 6,
+        y: 2,
         tiles: res.sprite,
-        w: 1,
-        h: 1,
-        aw: 1,
-        ah: 1,
         startTilex: 0,
         endTilex: 5,
         framerate: 9,
@@ -74,6 +66,7 @@ module.exports = function() {
         keys: []
     });
 
+    sys.augment(env, env.tuning)
     env.debug = true
     env.status = 'debug mode'
 }

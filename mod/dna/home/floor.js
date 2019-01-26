@@ -9,8 +9,10 @@
  */
 let Floor = function(st) {
     dna.Sprite.call(this, st);
-    //this.speed = 0.5;
+
+    this.solid = true
     this.tiles = res.home.floor;
+
     sys.augment(this, st);
 };
 

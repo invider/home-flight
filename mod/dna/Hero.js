@@ -4,8 +4,16 @@
 let Hero = function(st) {
     dna.Sprite.call(this, st);
     this.collidable = true;
+    
     this.keys = []
-    this.speed = 4;
+
+    this.w = 1
+    this.h = 1
+    this.aw = 0.8
+    this.ah = 0.9
+
+    this.speed = 4
+    this.dy = 0
 
     sys.augment(this, st)
 }
@@ -15,19 +23,38 @@ Hero.prototype.use = function(action) {
     log.out('action: ' + action)
 }
 
+Hero.prototype.jump = function() {
+    log.out('jump')
+    this.dy = -env.JUMP
+}
+
+Hero.prototype.moveTo = function(x, y) {
+    // try to move
+    if (lab.collider.testWall(this, x, y)) return false
+
+    this.x = x
+    this.y = y
+    return true
+}
+
 Hero.prototype.evo = function(dt) {
     //dna.Sprite.evo(this, dt)
     this.nextFrame(dt)
 
+    // move horizontally
     if (this.keys[1]) {
-        this.x -= this.speed * dt
-    } else if (this.keys[2]) {
-        this.y -= this.speed * dt
+        this.moveTo(this.x - this.speed * dt, this.y)
     } else if (this.keys[3]) {
-        this.x += this.speed * dt
-    } else if (this.keys[4]) {
-        this.y += this.speed * dt
-    } 
+        this.moveTo(this.x + this.speed * dt, this.y)
+    }
+
+    // apply gravity
+    this.dy += env.G*dt
+
+    // vertical movement - jumps and gravity
+    if (!this.moveTo(this.x, this.y + this.dy*dt)) {
+        this.dy = 0
+    }
 }
 
 Hero.prototype.postDraw = function() {

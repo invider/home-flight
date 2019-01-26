@@ -6,6 +6,9 @@ module.exports = {
     move: function(player, dir) {
         let h = lab.camera['hero' + player]
         if (h) {
+            if (dir === 2 && !h.keys[dir]) {
+                h.jump()
+            }
             h.keys[dir] = true
         }
     },

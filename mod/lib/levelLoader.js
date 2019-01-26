@@ -44,7 +44,8 @@ let LevelLoader = {
                 h: 1
             };
             let type = typeMap[symbol];
-
+            console.log(symbol);
+            if (symbol == "|") debugger;
             if (type) {
                 if (typeof typeMap[symbol] !== "string") {
                     type = typeMap[symbol].proto;

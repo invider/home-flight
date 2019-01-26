@@ -21,11 +21,6 @@ module.exports = {
             }
         });
 
-        if (collision) {
-            env.status = 'collision'
-        } else {
-            env.status = 'free'
-        }
         return collision
     },
 

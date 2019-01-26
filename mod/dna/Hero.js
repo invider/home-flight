@@ -28,10 +28,19 @@ sys.extend(Hero, dna.Sprite);
 
 Hero.prototype.use = function(action) {
     log.out('action: ' + action)
+
+    switch(action) {
+    case 1: this.jump(); break;
+    }
 }
 
 Hero.prototype.jump = function() {
     this.dy = -env.JUMP
+    log.out('sfx')
+    console.dir(res.sfx.jump1)
+    console.dir(lib.sfx)
+
+    lib.sfx(res.sfx.jump1, 0.5)
 }
 
 Hero.prototype.moveTo = function(x, y) {

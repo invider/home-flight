@@ -15,7 +15,7 @@ let Trigger = function(st) {
     this.triggerTileX = 10;
     this.tiles = res.tileset;
     this.collidable = true;
-
+    this.angle = 20;
     sys.augment(this, st)
 };
 

@@ -6,7 +6,8 @@ let Hero = function(st) {
     this.collidable = true;
     this.keys = []
     this.speed = 4;
-
+    this.tiles = res.sprite;
+    debugger;
     sys.augment(this, st)
 }
 sys.extend(Hero, dna.Sprite);

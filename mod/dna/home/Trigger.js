@@ -21,7 +21,9 @@ let Trigger = function(st) {
 
 sys.extend(Trigger, dna.Sprite);
 
-
+Trigger.prototype.use = function(){
+    console.log("Trigger used: ", this);
+}
 Trigger.prototype.hit = function(elem){
     if (elem instanceof dna.Hero){
         lab[elem.controlName].trigger = this;

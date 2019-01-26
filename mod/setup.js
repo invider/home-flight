@@ -59,7 +59,7 @@ module.exports = function() {
     //     framerate: 9,
     // }, 'camera');
 
-    sys.spawn('TriggerControl', {
+    sys.spawn('home/TriggerControl', {
         name: 'triggerControl1', 
         Z: 10,
         x: 50,
@@ -71,7 +71,7 @@ module.exports = function() {
         keys: []
     });
 
-    sys.spawn('TriggerControl', {
+    sys.spawn('home/TriggerControl', {
         name: 'triggerControl2', 
         Z: 10,
         x: 150,

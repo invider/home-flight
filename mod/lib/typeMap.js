@@ -1,5 +1,7 @@
 var TYPEMAP = {
-    '*': 'home/floor',
+    '*': 'home/Floor',
+    'w': 'home/controls/Window',
+    '|': 'home/Wall',
     'r': 'roof',
     '@': {proto:"Hero", params: {
         name: "hero1",

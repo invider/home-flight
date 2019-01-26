@@ -47,16 +47,16 @@ module.exports = {
         let y = 0
         if (pad.axes[1]) y = pad.axes[1]
 
-        if (x < -0.1) this.move(player, 1)
+        if (x < -0.2) this.move(player, 1)
         else this.stop(player, 1)
 
-        if (x > 0.1) this.move(player, 3)
+        if (x > 0.2) this.move(player, 3)
         else this.stop(player, 3)
 
-        if (y < -0.1) this.move(player, 2)
+        if (y < -0.8) this.move(player, 2)
         else this.stop(player, 2)
 
-        if (y > 0.1) this.move(player, 4)
+        if (y > 0.8) this.move(player, 4)
         else this.stop(player, 4)
 
     },

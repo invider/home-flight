@@ -32,6 +32,7 @@ TriggerControl.prototype.drawTrigger = function(){
     ctx.translate(this.x, this.y);
     ctx.rotate(this.trigger.angle * Math.PI / 180);
     this.trigger.tiles.draw(this.trigger.triggerTileX, - tiles.tw/2, - tiles.th/2, tiles.th, tiles.tw);
+    
     ctx.restore();
 }
 

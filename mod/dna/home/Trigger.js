@@ -15,7 +15,7 @@ let Trigger = function(st) {
     this.triggerTileX = 10;
     this.tiles = res.tileset;
     this.collidable = true;
-    this.angle = 20;
+    this.angle = 0;
     sys.augment(this, st)
 };
 
@@ -23,8 +23,9 @@ sys.extend(Trigger, dna.Sprite);
 
 
 Trigger.prototype.hit = function(elem){
-    lab.triggerControl.trigger = this;
-    lab.triggerControl.visible = true;
+    if (elem instanceof dna.Hero){
+        lab[elem.controlName].trigger = this;
+    }
 }
 
 module.exports = Trigger

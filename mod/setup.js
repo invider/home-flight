@@ -32,33 +32,50 @@ module.exports = function() {
         lab.game.nextLevel();
     }
 
+    /*
     sys.spawn('Hero', {
-        name: 'hero1',
-        Z: 100, 
-        x: 14,
-        y: 2,
-        tiles: res.sprite,
-        startTilex: 0,
-        endTilex: 5,
-        framerate: 9,
+         name: 'hero1',
+         Z: 100, 
+         x: 5,
+         y: 2,
+         startTilex: 0,
+         endTilex: 5,
+         framerate: 9,
     }, 'camera');
+    */
 
-    sys.spawn('Hero', {
-        name: 'hero2',
-        Z: 100, 
-        x: 6,
-        y: 2,
-        tiles: res.sprite,
-        startTilex: 0,
-        endTilex: 5,
-        framerate: 9,
-    }, 'camera');
+    // sys.spawn('Hero', {
+    //     name: 'hero3',
+    //     Z: 100, 
+    //     x: 12,
+    //     y: 12,
+    //     tiles: res.sprite,
+    //     w: 1,
+    //     h: 1,
+    //     aw: 1,
+    //     ah: 1,
+    //     startTilex: 0,
+    //     endTilex: 5,
+    //     framerate: 9,
+    // }, 'camera');
 
     sys.spawn('TriggerControl', {
-        name: 'triggerControl', 
+        name: 'triggerControl1', 
         Z: 10,
-        x: 10,
-        y: 10,
+        x: 50,
+        y: 50,
+        w: 50,
+        h: 50,
+        scale: ZOOM,
+        speed: ZOOM*8,
+        keys: []
+    });
+
+    sys.spawn('TriggerControl', {
+        name: 'triggerControl2', 
+        Z: 10,
+        x: 150,
+        y: 50,
         w: 50,
         h: 50,
         scale: ZOOM,

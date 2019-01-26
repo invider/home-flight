@@ -4,15 +4,22 @@
 let Hero = function(st) {
     dna.Sprite.call(this, st);
     this.collidable = true;
+    this.Z = 101
     
     this.keys = []
 
+    this.x = 0
+    this.y = 0
     this.w = 1
     this.h = 1
     this.aw = 0.8
     this.ah = 0.9
+    this.tiles = res.sprite
+    this.startTilex = 0
+    this.endTilex = 5
+    this.framerate = 9
 
-    this.speed = 4
+    this.speed = 5
     this.dy = 0
 
     sys.augment(this, st)
@@ -24,7 +31,7 @@ Hero.prototype.use = function(action) {
 }
 
 Hero.prototype.jump = function() {
-    log.out('jump')
+    log.out(this.name + ' jump')
     this.dy = -env.JUMP
 }
 

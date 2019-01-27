@@ -34,7 +34,7 @@ Sprite.prototype.init = function() {
 }
 
 Sprite.prototype.nextFrame = function(dt) {
-    if (!this.tilex) this.tilex = this.startTilex
+    if (this.tilex === false) this.tilex = this.startTilex
 
     if (this.framerate > 0) {
         this.tilexTime += dt
@@ -68,10 +68,10 @@ Sprite.prototype.draw = function() {
     if (this.img) {
         ctx.drawImage(this.img, -this.w2, -this.h2, this.w, this.h)
 
-    } else if (this.tiles) {
+    } else if (this.tiles && this.tilex !== false) {
         if (sys.isArray(this.tiles)) {
             ctx.drawImage(this.tiles[this.tilex],
-                0, 0, this.w, this.h)
+                -this.w2, -this.h2, this.w, this.h)
         } else {
             if (this.lastDx <= 0) {
                 this.tiles.draw(this.tilex, -this.w2, -this.h2, this.w, this.h)

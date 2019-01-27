@@ -19,6 +19,8 @@ module.exports = function(e) {
         y: ty,
     }
 
-    let ls = lab.collider.touch(tx, ty)
+    //let ls = lab.collider.touch(tx, ty)
+    let ls = lab.collider.filterWithin(tx, ty, 0.8, 0.8)
+    console.log('-----------------')
     ls.forEach(e => console.dir(e))
 }

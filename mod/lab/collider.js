@@ -24,6 +24,22 @@ module.exports = {
         return collision
     },
 
+    filterWithin: function(x, y, w, h) {
+        let res = []
+
+        lab.camera._ls.forEach(t => {
+            if (x+w/2 >= t.x-t.aw/2
+                    && x-w/2 <= t.x+t.aw/2
+                    && y+h/2 >= t.y-t.ah/2
+                    && y-h/2 <= t.y+t.ah/2) {
+                // got a hit
+                res.push(t)
+            }
+        });
+
+        return res
+    },
+
     touch: function(x, y) {
         let res = []
         lab.camera._ls.forEach(e => {

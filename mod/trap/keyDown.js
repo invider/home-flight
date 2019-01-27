@@ -7,7 +7,7 @@ module.exports = function(e) {
         case 'KeyA': lab.control.move(1, 1); break;
         case 'KeyD': lab.control.move(1, 3); break;
         case 'KeyW': if (!e.repeat) lab.control.use(1, 1); break;
-        case 'KeyS': case 'KeyE': if (!e.repeat) lab.control.use(1, 1); break;
+        case 'KeyS': case 'KeyE': if (!e.repeat) lab.control.use(1, 2); break;
         // player 2
         case 'ArrowLeft': lab.control.move(2, 1); break;
         case 'ArrowRight': lab.control.move(2, 3); break;

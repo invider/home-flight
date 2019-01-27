@@ -1,4 +1,14 @@
 #!/bin/sh
 
-rm -rf node_modules
+#rm -rf node_modules
+
+# remove generated content
+rm -rf ./pub
+rm -rf ./pubz
+rm -f *zip
+rm -f *tar
+rm -f *tar.gz
+
+# clean up MacOS X artifacts
+find . -name ‘*.DS_Store’ -type f -delete
 

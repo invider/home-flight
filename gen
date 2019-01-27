@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo 'generating web content...'
+
+rm -rf ./pub
+mkdir ./pub
+
+cp -r ./node_modules/jam.fs/core/* ./pub/
+cp -r ./mod ./pub/
+cp -r ./static/* ./pub/
+
+du -sh ./pub
+
+echo 'generating topology...'
+
+node gen.js
+

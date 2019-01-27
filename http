@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# start simple static http server
+# useful for testing static content
+
+python -m SimpleHTTPServer 8001
+

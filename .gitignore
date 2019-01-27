@@ -64,3 +64,5 @@ typings/
 # MacOS X
 .DS_Store
 
+# generated web content
+pub

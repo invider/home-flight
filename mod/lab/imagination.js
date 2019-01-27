@@ -54,5 +54,11 @@ module.exports = {
         ctx.fillStyle = '#605080'
         ctx.font = '18px kenney-rocket-square'
         ctx.fillText('imagination: ' + Math.floor(this.value) + '%', ctx.width/2, 54)
+
+        ctx.fillStyle = env.color.imagination
+        ctx.font = '18px kenney-rocket-square'
+        ctx.textAlign = 'left'
+        ctx.textBaseline = 'top'
+        ctx.fillText('day: ' + Math.floor(env.day), 10, 10)
     }
 }

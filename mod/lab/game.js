@@ -8,9 +8,19 @@ let game = {
 
     level: 0,
     cycle: 0,
+    dayTime: 0,
 
     evo: function(dt) {
         this.cycle++
+        this.dayTime += dt
+        if (this.dayTime > env.DAY_LENGTH) {
+            this.dayTime = 0
+            this.nextDay()
+        }
+    },
+
+    nextDay: function() {
+        env.day++
     },
 
     nextLevel: function(level){

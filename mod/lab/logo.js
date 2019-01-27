@@ -8,7 +8,7 @@ module.exports = {
     Z: 21,
 
     draw: function() {
-        ctx.fillStyle = '#c040ff'
+        ctx.fillStyle = env.color.imagination
         ctx.textAlign = 'center'
         ctx.textBaseline = 'bottom'
 

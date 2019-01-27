@@ -24,6 +24,7 @@ let game = {
     nextDay: function() {
         env.day++
         lab.meteoroidRain.freq *= env.tuning.METEOR_DAY_FQ_INCREASE
+        lab.space.speed += 1
         lib.sfx(res.sfx.nextday, 0.3)
     },
 

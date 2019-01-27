@@ -1,5 +1,5 @@
 
-let ZOOM = 30
+let ZOOM = 35
 
 function attachEngine(x, y) {
     sys.spawn('Emitter', {
@@ -25,7 +25,7 @@ module.exports = function() {
         name: 'camera', 
         Z: 10,
         x: 13,
-        y: 8,
+        y: 9,
         scale: ZOOM,
         speed: ZOOM*8,
         keys: []

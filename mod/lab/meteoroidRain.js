@@ -32,6 +32,21 @@ function hitTarget(tar) {
         x: tar.x,
         y: tar.y,
     }, 'camera')
+
+    sys.spawn('Emitter', {
+        Z: 102,
+        x: tar.x,
+        y: tar.y,
+        color: '#ffffff',
+        lifespan: 0.1,
+        force: 1000,
+        radius: 0.2,
+        size: 0.1, vsize: 0.1,
+        speed: 1, vspeed: 0.2,
+        angle: 0, spread: Math.PI*2,
+        minLifespan: 0.4, vLifespan: 0.2
+    }, 'camera')
+
     lab.imagination.reduce(env.METEOR_HIT_FACTOR)
 }
 
@@ -53,7 +68,7 @@ module.exports = {
             a: true,
             c: lib.math.rndi(3),
             m: 10 + lib.math.rndi(5),
-            x: lib.math.rndi(ctx.width*2),
+            x: lib.math.rndi(ctx.width),
             y: -50,
             tar: tar,
             tx: lab.camera.screenX(tar.x),
@@ -101,10 +116,12 @@ module.exports = {
                 }
                 ctx.drawImage(img, m.x-m.m/2, m.y-m.m/2, m.m, m.m)
 
-                // mark target
+                /*
+                // mark the target
                 let TH = 2
                 ctx.fillStyle = '#ff1020'
                 ctx.fillRect(m.tx-TH, m.ty-TH, TH*2, TH*2)
+                */
             }
         })
     },

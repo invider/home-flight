@@ -1,6 +1,22 @@
 
 let ZOOM = 30
 
+function attachEngine(x, y) {
+    sys.spawn('Emitter', {
+        Z: 25,
+        x: x,
+        y: y,
+        color: '#ffffff',
+        lifespan: -1,
+        force: 1000,
+        radius: 0,
+        size: 0.1, vsize: 0.1,
+        speed: 3, vspeed: 0.4,
+        angle: Math.PI*0.45, spread: Math.PI/8,
+        minLifespan: 0.5, vLifespan: 0.2,
+    }, 'camera')
+}
+
 module.exports = function() {
 
     log.out('setting up')
@@ -57,6 +73,10 @@ module.exports = function() {
         speed: ZOOM*8,
         keys: []
     });
+
+    // attach rocket engines
+    attachEngine(2, 16)
+    attachEngine(24, 16)
 
     env.sfxVolume = 0.7
     sys.augment(env, env.tuning)

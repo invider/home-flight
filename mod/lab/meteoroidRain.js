@@ -48,6 +48,7 @@ function hitTarget(tar) {
     }, 'camera')
 
     lab.imagination.reduce(env.METEOR_HIT_FACTOR)
+    lib.sfx(res.sfx.explosion1, 0.5)
 }
 
 
@@ -55,7 +56,7 @@ module.exports = {
 
     Z: 102,
 
-    freq: 1,
+    freq: env.tuning.METEOR_INIT_FQ,
 
     meteoroids: [],
 

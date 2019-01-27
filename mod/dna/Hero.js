@@ -29,6 +29,39 @@ let Hero = function(st) {
 }
 sys.extend(Hero, dna.Sprite);
 
+Hero.prototype.hint = function(msg, color, st) {
+	// check if that hint already exists
+    if (st && st.name) {
+        if (lab[st.name]) return
+    }
+	if (!color) color = '#ffff00'
+
+    let opt = {
+        Z: 20,
+        text: msg,
+        fillStyle: '#000000',
+        x: lab.camera.screenX(this.x+2),
+        y: lab.camera.screenY(this.y - this.h/2),
+        font: '14px ' + env.FONT,
+        align: 'center',
+        ttl: 2.5,
+        tti: 0.3,
+        ttf: 1,
+        dx: +20,
+        dy: -50,
+    }
+    if (st) sys.augment(opt, st)
+
+    sys.spawn('text/fadeText', opt)
+
+    opt.fillStyle = color
+    opt.x -= 1
+    opt.y -= 1
+    opt.Z += 5
+    sys.spawn('text/fadeText', opt)
+}
+
+
 Hero.prototype.use = function(action) {
     
     switch(action) {

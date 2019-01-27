@@ -13,8 +13,8 @@ let Hero = function(st) {
 
     this.x = 0
     this.y = 0
-    this.w = 0.8
-    this.h = 0.8
+    this.w = 0.9
+    this.h = 0.9
     this.aw = 0.8
     this.ah = 0.9
     lastColor = !lastColor

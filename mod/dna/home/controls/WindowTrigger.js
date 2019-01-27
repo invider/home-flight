@@ -19,6 +19,34 @@ sys.extend(WindowTrigger, dna.home.Trigger);
 
 WindowTrigger.prototype.use = function(target){
     lab.imagination.value -= 10;
+    let rays = lib.damageDistribution.createRays(this.x, this.y);
+    while (rays.length){
+        rays = lib.damageDistribution.distribute(rays)
+        rays = lib.damageDistribution.checkDamage(rays, (x, y)=> {
+            return lab.camera._ls.filter(camObj => {
+                let ox = Math.round(camObj.x);
+                let oy = Math.round(camObj.y);
+                let res = x == ox && y == oy;
+                if (res){
+                    console.log("Damaged:", camObj);
+                    sys.spawn('Emitter', {
+                        Z: 102,
+                        x: x,
+                        y: y,
+                        color: '#ffffff',
+                        lifespan: 0.1,
+                        force: 1000,
+                        radius: 0.2,
+                        size: 0.1, vsize: 0.1,
+                        speed: 1, vspeed: 0.2,
+                        angle: 0, spread: Math.PI*2,
+                        minLifespan: 0.4, vLifespan: 0.2
+                    }, 'camera')
+                }
+                return res;
+            }).length;
+        });
+    }
 }
 
 module.exports = WindowTrigger

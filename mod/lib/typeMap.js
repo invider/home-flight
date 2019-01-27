@@ -18,7 +18,8 @@ var TYPEMAP = {
     }},
     'w': 'home/controls/WindowTrigger',
     'm': 'home/controls/MicrowaveTrigger',
-    'T': 'home/controls/TestTrigger'
+    'T': 'home/controls/TestTrigger',
+    't': 'home/controls/TvTrigger'
 };
 
 

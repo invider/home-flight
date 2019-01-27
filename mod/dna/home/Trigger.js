@@ -18,7 +18,7 @@ let Trigger = function(st) {
 sys.extend(Trigger, dna.Sprite);
 
 Trigger.prototype.use = function(hero, action){
-    log.out('trigger ' + this.name + ' used by ' + hero.name)
+    log.out(this.name + ' used by ' + hero.name)
 }
 
 Trigger.prototype.hit = function(elem){

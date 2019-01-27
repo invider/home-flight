@@ -30,7 +30,7 @@ let Hero = function(st) {
 sys.extend(Hero, dna.Sprite);
 
 Hero.prototype.use = function(action) {
-
+    
     switch(action) {
     case 1: this.jump(); break;
     case 2: if (this.trigger) {

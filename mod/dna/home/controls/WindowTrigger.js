@@ -17,5 +17,9 @@ let WindowTrigger = function(st) {
 
 sys.extend(WindowTrigger, dna.home.Trigger);
 
+WindowTrigger.prototype.use = function(target){
+    lab.imagination.value -= 10;
+}
+
 module.exports = WindowTrigger
 

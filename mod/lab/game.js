@@ -11,6 +11,8 @@ let game = {
     dayTime: 0,
 
     evo: function(dt) {
+        if (this.over) return
+
         this.cycle++
         this.dayTime += dt
         if (this.dayTime > env.DAY_LENGTH) {
@@ -21,6 +23,8 @@ let game = {
 
     nextDay: function() {
         env.day++
+        lab.meteoroidRain.freq *= env.tuning.METEOR_DAY_FQ_INCREASE
+        lib.sfx(res.sfx.nextday, 0.3)
     },
 
     nextLevel: function(level){

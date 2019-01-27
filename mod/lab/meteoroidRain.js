@@ -56,7 +56,7 @@ module.exports = {
 
     Z: 102,
 
-    freq: 1,
+    freq: env.tuning.METEOR_INIT_FQ,
 
     meteoroids: [],
 

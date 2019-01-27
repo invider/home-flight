@@ -30,6 +30,7 @@ Ruby.prototype.hit = function(e) {
         let v = Math.ceil(this.value)
         lab.imagination.supply(v)
         e.hint('+' + v + ' imagination', env.color.up)
+        lib.sfx(res.sfx.pickup2, 0.5)
         this.__.detach(this)
     }
 }

@@ -48,6 +48,7 @@ function hitTarget(tar) {
     }, 'camera')
 
     lab.imagination.reduce(env.METEOR_HIT_FACTOR)
+    lib.sfx(res.sfx.explosion1, 0.5)
 }
 
 

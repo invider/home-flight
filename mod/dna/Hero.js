@@ -2,7 +2,7 @@
 //@depends(dna/Sprite)
 
 let id = 1
-
+let lastColor = 0;
 let Hero = function(st) {
     dna.Sprite.call(this, st);
     this.name = 'hero' + id++
@@ -17,9 +17,9 @@ let Hero = function(st) {
     this.h = 1.2
     this.aw = 0.8
     this.ah = 0.9
-    this.tiles = res.sprite
-    this.startTilex = 0
-    this.endTilex = 5
+    this.tiles = res.character
+    this.oldX = 0;
+    this.startTilex = -1
     this.framerate = 9
 
     this.speed = 5
@@ -93,6 +93,7 @@ Hero.prototype.moveTo = function(x, y) {
 
 Hero.prototype.evo = function(dt) {
     //dna.Sprite.evo(this, dt)
+    this.oldX = this.x;
     this.nextFrame(dt)
 
     // move horizontally
@@ -109,8 +110,20 @@ Hero.prototype.evo = function(dt) {
     if (!this.moveTo(this.x, this.y + this.dy*dt)) {
         this.dy = 0
     }
+    this.selectTile();
 }
-
+Hero.prototype.selectTile = function(){
+    if (this.oldX === this.x && this.startTilex != -1){
+        return;
+    }
+    
+    let current = (!lastColor) ? 0: 4;
+    this.startTilex = current;
+    if (this.oldX > this.x){
+        this.startTilex += 2;
+    }
+    this.endTilex = this.startTilex + 1
+};
 Hero.prototype.postDraw = function() {
     // draw active frame and status in debug mode
     if (env.debug) {

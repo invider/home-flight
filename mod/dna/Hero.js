@@ -17,6 +17,8 @@ let Hero = function(st) {
     this.h = 1.2
     this.aw = 0.8
     this.ah = 0.9
+    lastColor = !lastColor
+    this.color = lastColor;
     this.tiles = res.character
     this.oldX = 0;
     this.startTilex = -1
@@ -116,8 +118,8 @@ Hero.prototype.selectTile = function(){
     if (this.oldX === this.x && this.startTilex != -1){
         return;
     }
-    
-    let current = (!lastColor) ? 0: 4;
+
+    let current = this.color ? 0: 4;
     this.startTilex = current;
     if (this.oldX > this.x){
         this.startTilex += 2;

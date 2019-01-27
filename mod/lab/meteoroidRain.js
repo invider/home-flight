@@ -27,6 +27,15 @@ function tryMultipleTargets() {
     return false
 }
 
+function hitTarget(tar) {
+    sys.spawn('Ruby', {
+        x: tar.x,
+        y: tar.y,
+    }, 'camera')
+    lab.imagination.reduce(env.METEOR_HIT_FACTOR)
+}
+
+
 module.exports = {
 
     Z: 102,
@@ -43,13 +52,13 @@ module.exports = {
         let meteor = {
             a: true,
             c: lib.math.rndi(3),
-            m: 24 + lib.math.rndi(5),
+            m: 10 + lib.math.rndi(5),
             x: lib.math.rndi(ctx.width*2),
-            y: 100,
+            y: -50,
             tar: tar,
             tx: lab.camera.screenX(tar.x),
             ty: lab.camera.screenY(tar.y),
-            ttl: 2,
+            ttl: 1,
         }
 
         meteor.dx = (meteor.tx-meteor.x)/meteor.ttl
@@ -69,10 +78,15 @@ module.exports = {
         if (lib.math.rndf() < this.freq * dt) this.newMeteor()
 
         this.meteoroids.forEach(m => {
-            m.x += m.dx * dt
-            m.y += m.dy * dt
-            m.ttl -= dt
-            if (m.ttl < 0) m.a = false
+            if (m.a) {
+                m.x += m.dx * dt
+                m.y += m.dy * dt
+                m.ttl -= dt
+                if (m.ttl < 0) {
+                    m.a = false
+                    hitTarget(m.tar)
+                }
+            }
         })
     },
 

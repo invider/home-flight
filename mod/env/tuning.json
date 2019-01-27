@@ -3,5 +3,6 @@
     "JUMP":15,
     "SPEED": 12,
     "MAX_IMAGINATION": 100,
-    "IMAGINATION_BAR": 0.5
+    "IMAGINATION_BAR": 0.5,
+    "METEOR_HIT_FACTOR": 2
 }

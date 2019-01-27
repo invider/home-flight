@@ -31,4 +31,3 @@ Trigger.prototype.hit = function(elem){
 
 module.exports = Trigger
 
-
